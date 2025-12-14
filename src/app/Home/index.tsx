@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Image, View, TouchableOpacity, Text, FlatList } from 'react-native';
 import { styles } from './styles';
 
@@ -13,9 +14,15 @@ const ITEMS = [
     { id: "1", status: FilterStatus.DONE, description: "1 pacote de café" },
     { id: "2", status: FilterStatus.PENDING, description: "3 pacotes de macarrão" },
     { id: "3", status: FilterStatus.PENDING, description: "3 cebolas" },
-]
+];
 
 export function Home() {
+    const [filter, setFilter] = useState(FilterStatus.PENDING);
+
+    // function update(value: FilterStatus) {
+    //     setFilter(value);
+    // }
+
     return (
         <View style={styles.container}>
             <Image
@@ -30,7 +37,12 @@ export function Home() {
             <View style={styles.content}>
                 <View style={styles.header}>
                     {FILTER_STATUS.map((status) => (
-                        <Filter key={status} status={status} isActive />
+                        <Filter
+                            key={status}
+                            status={status}
+                            isActive={status === filter}
+                            onPress={() => setFilter(status)}
+                        />
                     ))}
 
                     <TouchableOpacity style={styles.clearButton} >
@@ -49,8 +61,8 @@ export function Home() {
                         />
                     )}
                     showsVerticalScrollIndicator={false}
-                    ItemSeparatorComponent={() => <View style={styles.separator}/>}
-                    contentContainerStyle ={styles.listContent}
+                    ItemSeparatorComponent={() => <View style={styles.separator} />}
+                    contentContainerStyle={styles.listContent}
                     ListEmptyComponent={() => <Text style={styles.empty}>Nenhum item aqui.</Text>}
                 />
 
