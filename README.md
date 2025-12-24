@@ -7,7 +7,6 @@ Aplicativo mobile desenvolvido com **React Native** para criar e gerenciar uma l
 
 Um app simples e funcional para ajudar usuários a gerenciar itens que precisam comprar. Permite adicionar novos produtos e marcar quando foram comprados, proporcionando uma experiência fluida e organizada de lista de compras.
 
----
 
 ## 📌 Funcionalidades
 
@@ -16,7 +15,6 @@ Um app simples e funcional para ajudar usuários a gerenciar itens que precisam 
 ✔️ Interface intuitiva e simples  
 ✔️ Suporte para Android e iOS (via React Native)
 
----
 
 ## 📱 Tecnologias Utilizadas
 
